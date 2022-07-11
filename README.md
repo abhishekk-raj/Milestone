@@ -21,6 +21,10 @@ This is a sample application created while official React Trainning at [Betatest
 
 - Run command `npm start` to run the project
 
+## React CheatSheet
+
+[Get it here](https://github.com/abhishekk-raj/Milestone/blob/master/docs/documentation.md)
+
 ## Project Preview
 
 [To preview the project click here]()
