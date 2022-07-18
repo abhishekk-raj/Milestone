@@ -437,3 +437,163 @@ It will throw an error -
 ```typescript
 Duplicate identifier 'Book'.
 ```
+
+## Components
+
+Components are independent and reusable bits of code. It is the same as javascript class/function but works in isolation and returns html via render function.
+
+### Component Types
+
+There are two types of component -
+
+- Class component
+- Function component
+
+<br>
+
+### Class Component
+
+Before React v16.8, class components were the only way to track state and lifecycle of components.
+
+- To create a class component, it should extend the React.Component class
+- Class names must start with an uppercase letter such as Table, Car etc.
+- All react components should have a render method.
+
+```typescript
+import React, { Component } from "react";
+
+export class ClassComponent extends Component {
+  render(): React.ReactNode {
+    return (
+      <div>
+        <h1>Class Component</h1>
+      </div>
+    );
+  }
+}
+```
+
+### Function Component
+
+Function components are more lightweight than class components. You need to write less code, easy to understand but works the same like class components. Function components are much like a JS function that returns HTML.
+
+```typescript
+import React from "react";
+
+export const FunctionComponent = () => {
+  return (
+    <div>
+      <h1>FunctionComponent</h1>
+    </div>
+  );
+};
+```
+
+### Lifecycle Hooks
+
+React class component has different lifecycle hooks at three phases -
+
+- Mounting
+- Updating
+- Unmounting
+
+#### Mounting
+
+Mounting means putting elements into the DOM.
+
+- Constructor - The constructor() method is called before anything else, when the component is initiated, and it is the natural place to set up the initial state and other initial values.
+- getDerivedStateFromProps - The getDerivedStateFromProps() method is called right before rendering the elements in the DOM. This is the natural place to set the state object based on the initial props.
+- render - The render() method is required, and is the method that actually outputs the HTML to the DOM.
+- componentDidMount - The componentDidMount() method is called after the component is rendered. This is the best place to make network calls.
+
+#### Updating
+
+The next phase in the lifecycle is when a component is updated.
+
+- getDerivedStateFromProps - This is the first method that is called when a component gets updated. This is still the natural place to set the state object based on the initial props.
+- shouldComponentUpdate - In the shouldComponentUpdate() method you can return a Boolean value that specifies whether React should continue with the rendering or not. The default value is true.
+- render - The render() method is of course called when a component gets updated, it has to re-render the HTML to the DOM, with the new changes.
+- getSnapshotBeforeUpdate - In the getSnapshotBeforeUpdate() method you have access to the props and state before the update, meaning that even after the update, you can check what the values were before the update. If the getSnapshotBeforeUpdate() method is present, you should also include the componentDidUpdate() method, otherwise you will get an error.
+- componentDidUpdate - The componentDidUpdate method is called after the component is updated in the DOM.
+
+#### Unmounting
+
+The next phase in the lifecycle is when a component is removed from the DOM.
+
+- componentWillUnmount - The componentWillUnmount method is called when the component is about to be removed from the DOM.
+
+<br>
+
+**Note**: We can use `useEffect` hooks to achieve similar functionality, what we can do with class component’s lifecycle hooks.
+
+```typescript
+useEffect(() => {
+  // Make some change on component render
+}, []);
+```
+
+## State
+
+- The state object is where you store property values that belong to the component.
+- React components have a built-in state object.
+- When the state object changes, the component re-renders.
+- The state object is initialized in the constructor
+- The state object can contain as many properties as you like
+- Refer to the state object anywhere in the component by using the this.state.propertyName syntax
+- To change a value in the state object, use the this.setState() method
+
+<br>
+
+### State in Class component
+
+<br>
+
+```typescript
+import React, { Component } from "react";
+
+interface IProps {}
+
+interface IState {
+  name: string;
+}
+
+export class ClassComponent extends Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+
+    this.state = {
+      name: "Abhishek",
+    };
+  }
+
+  render(): React.ReactNode {
+    return (
+      <div>
+        <h1>Class Component</h1>
+        <h2>Name: {this.state.name}</h2>
+      </div>
+    );
+  }
+}
+```
+
+<br>
+
+### State in Function component
+
+<br>
+
+```typescript
+import React, { useState } from "react";
+
+export const FunctionComponent = () => {
+  const [name] = useState("Vikram");
+
+  return (
+    <div>
+      <h1>FunctionComponent</h1>
+      <h2>Name: {name}</h2>
+    </div>
+  );
+};
+```
