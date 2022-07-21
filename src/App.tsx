@@ -19,8 +19,8 @@ function App() {
     <div className="App">
       <p>{name}</p>
       <button onClick={changeName}>Change Name</button>
-      <ClassComponent />
-      <FunctionComponent />
+      <ClassComponent propsIn="Class component"/>
+      <FunctionComponent propsIn="Function component" />
     </div>
   );
 }

@@ -535,7 +535,7 @@ useEffect(() => {
 ## State
 
 - The state object is where you store property values that belong to the component.
-- React components have a built-in state object.
+- React class components have a built-in state object, For function component, we can use `useState` hooks.
 - When the state object changes, the component re-renders.
 - The state object is initialized in the constructor
 - The state object can contain as many properties as you like
@@ -597,3 +597,54 @@ export const FunctionComponent = () => {
   );
 };
 ```
+
+## Props
+
+- Props are arguments passed into React components.
+- Props are passed to components via HTML attributes.
+- The child component receives the argument as a props object
+- Props are also how you pass data from one component to another
+
+### Props in class component
+
+#### Class Component
+
+```typescript
+import React, { Component } from "react";
+
+interface IProps {
+  propsIn: string;
+}
+
+interface IState {
+  name: string;
+}
+
+export class ClassComponent extends Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+
+    this.state = {
+      name: "Abhishek",
+    };
+  }
+
+  render(): React.ReactNode {
+    return (
+      <div>
+        <h1>Class Component</h1>
+        <h2>Name: {this.state.name}</h2>
+        <p>Props in : {this.props.propsIn}</p>
+      </div>
+    );
+  }
+}
+```
+
+#### App component
+
+```typescript
+<ClassComponent propsIn="Class component" />
+```
+
+### Props in Function component
