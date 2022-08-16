@@ -741,3 +741,36 @@ const calculation = useMemo(() => expensiveCalculation(count), [count]);
 - If you have to keep track of multiple pieces of state that rely on complex logic, useReducer may be helpful
 - It takes two arguments - reducer and initial state
 - reducer function contains your custom state logic and initial state can be a simple value but generally will contain an object
+
+```typescript
+import React, { useReducer } from "react";
+
+const initialState = 0;
+const reducer = (state: number, action: string) => {
+  switch (action) {
+    case "add":
+      return state + 1;
+    case "subtract":
+      return state - 1;
+    case "reset":
+      return 0;
+    default:
+      throw new Error("Unexpected action");
+  }
+};
+
+const UseReducerHook = () => {
+  const [count, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <h2>{count}</h2>
+      <button onClick={() => dispatch("add")}>add</button>
+      <button onClick={() => dispatch("subtract")}>subtract</button>
+      <button onClick={() => dispatch("reset")}>reset</button>
+    </div>
+  );
+};
+
+export default UseReducerHook;
+```
