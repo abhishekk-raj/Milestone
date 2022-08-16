@@ -675,3 +675,62 @@ export const FunctionComponent: React.FC<IProps> = ({ propsIn }) => {
 ```typescript
 <FunctionComponent propsIn="Function component" />
 ```
+
+## useMemo Hook
+
+- The useMemo hook returns a memoised value, that means it caches a value
+- It only get called when its dependencies updated
+- It helpes us to avoid running intensive functions needlessly. Since component re-renders after state changes and all functions get called again, so to avoid that we can use useMemo.
+
+```typescript
+import React, { useMemo, useState } from "react";
+
+const UseMemoHook = () => {
+  const [count, setCount] = useState(0);
+  const [wordList, setwordList] = useState<string[]>([]);
+  const calculation = expensiveCalculation(count);
+
+  const incrementCount = () => {
+    setCount((c) => c + 1);
+  };
+  const addNewWord = () => {
+    setwordList((t) => [...t, "A new word"]);
+  };
+
+  return (
+    <div>
+      <div>
+        <h2>My word list</h2>
+        {wordList.map((word, index) => {
+          return <p key={index}>{word}</p>;
+        })}
+        <button onClick={addNewWord}>Add New Word</button>
+      </div>
+      <hr />
+      <div>
+        Count: {count}
+        <button onClick={incrementCount}>+</button>
+        <h2>Expensive Calculation</h2>
+        {calculation}
+      </div>
+    </div>
+  );
+};
+
+const expensiveCalculation = (num: number): number => {
+  for (let i = 0; i < 1000000000; i++) {
+    num += 1;
+  }
+  return num;
+};
+
+export default UseMemoHook;
+```
+
+After running this example you will notice that even if you are not doing any expensive calculation on adding new word, it's taking some time to render in UI. And this is happening because the component is re-rendering everytime state changes. To solve this problem we can use useMemo hook.
+
+Just need to replace call of calculation function wrapped in useMemo hook -
+
+```typescript
+const calculation = useMemo(() => expensiveCalculation(count), [count]);
+```
