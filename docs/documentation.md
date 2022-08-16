@@ -734,3 +734,10 @@ Just need to replace call of calculation function wrapped in useMemo hook -
 ```typescript
 const calculation = useMemo(() => expensiveCalculation(count), [count]);
 ```
+
+## useReducer Hook
+
+- It is similar to useState hook, but it allows custom state logic
+- If you have to keep track of multiple pieces of state that rely on complex logic, useReducer may be helpful
+- It takes two arguments - reducer and initial state
+- reducer function contains your custom state logic and initial state can be a simple value but generally will contain an object
