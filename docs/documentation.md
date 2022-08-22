@@ -849,3 +849,143 @@ We can handle form submission on form itself instead of calling handle method on
 ```
 
 This is equivalent to the above method but only difference is that we are calling handleSubmit method on onSubmit attribute on form instead of calling it to onClick attribute on the button.
+
+#### Handling multiple form data
+
+In this example we will see how to handle multiple forms data. So problem with our previous examples are we are creating multiple states for multiple form fields but how can we store all the form fields values in a single state. Let's look into the example below -
+
+```typescript
+<p>Eligible for exam: {eligibleForExam}</p>
+<p>Exam result: {result}</p>
+
+<form onSubmit={handleSubmit}>
+  <label>Name</label>
+  <input
+    name="firstName"
+    type="text"
+    value={form.firstName}
+    onChange={(e) => handleFormChange(e)}
+  />
+
+  <input
+    name="lastName"
+    type="text"
+    value={form.lastName}
+    onChange={(e) => handleFormChange(e)}
+  />
+
+  <input
+    name="marks"
+    type="text"
+    value={form.marks}
+    onChange={(e) => handleFormChange(e)}
+  />
+
+  <input
+    name="attendance"
+    type="text"
+    value={form.attendance}
+    onChange={(e) => handleFormChange(e)}
+  />
+
+  <button type="submit">Submit</button>
+</form>
+```
+
+- In this example, we have created a sigle method to handle onChange event of all form fields
+- So let's create our method first
+
+```typescript
+interface IForm {
+  firstName: string;
+  lastName: string;
+  marks: number;
+  attendance: number;
+}
+
+...
+
+const [form, setForm] = useState<IForm>({
+  firstName: "",
+  lastName: "",
+  marks: 0,
+  attendance: 0,
+});
+const [result, setResult] = useState("");
+const [eligibleForExam, setEligibleForExam] = useState("");
+
+...
+
+const handleFormChange = (event: any) => {
+  switch (event.target.name) {
+    case "marks":
+      setResult(event.target.value > 40 ? "Pass" : "Fail");
+      break;
+
+    case "attendance":
+      setEligibleForExam(event.target.value > 80 ? "Eligible" : "Not Eligible");
+      break;
+  }
+
+  setForm({
+    ...form,
+    [event.target.name]: event.target.value,
+  });
+};
+```
+
+So this is our complete code, let's break it down to understand what we are doing
+
+```typescript
+interface IForm {
+  firstName: string;
+  lastName: string;
+  marks: number;
+  attendance: number;
+}
+```
+
+We have created an interface to add typing to our form state.
+
+```typescript
+const [form, setForm] = useState<IForm>({
+  firstName: "",
+  lastName: "",
+  marks: 0,
+  attendance: 0,
+});
+const [result, setResult] = useState("");
+const [eligibleForExam, setEligibleForExam] = useState("");
+```
+
+Then we have created our state variables to store the form data and some processed result after form manipulation.
+
+```typescript
+setForm({
+  ...form,
+  [event.target.name]: event.target.value,
+});
+```
+
+Now inside our `handleFormChange` method, we are updating the form state.
+
+- First we are copying the data what we have inside the form state, then
+- We are updating the the state with new value
+- `[event.target.name]` is the same as our form name attribute.
+- `event.target.value` is the same as the value attribute of form.
+
+Here we are manipulating our form data and updating the other state variables -
+
+```typescript
+switch (event.target.name) {
+  case "marks":
+    setResult(event.target.value > 40 ? "Pass" : "Fail");
+    break;
+
+  case "attendance":
+    setEligibleForExam(event.target.value > 80 ? "Eligible" : "Not Eligible");
+    break;
+}
+```
+
+So if you want to do some manipulation on form data before sending it through an API or using it for any other purpose, you can manipulate it like this.
