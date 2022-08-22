@@ -19,7 +19,7 @@ export const FunctionComponent: React.FC<IProps> = ({ propsIn }) => {
       <h2>Name: {name}</h2>
       <p>Props in : {propsIn}</p> */}
 
-      <form>
+      {/* <form>
         <label>Name</label>
         <input
           name="firstName"
@@ -36,6 +36,27 @@ export const FunctionComponent: React.FC<IProps> = ({ propsIn }) => {
         />
 
         <button onClick={(e) => handleSubmit(e)}>Submit</button>
+      </form> */}
+
+      {/* 2nd method to use form */}
+
+      <form onSubmit={handleSubmit}>
+        <label>Name</label>
+        <input
+          name="firstName"
+          type="text"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+
+        <input
+          name="lastName"
+          type="text"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

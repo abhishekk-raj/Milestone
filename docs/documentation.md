@@ -822,3 +822,30 @@ const handleSubmit = (e: any) => {
 - Since data is handled by component, we store the form data in state of component
 - We control the input change through onChange attribute
 - We have written `e.preventDefault();` in handleSubmit method to prevent application to refresh.
+
+#### Another way of using form -
+
+We can handle form submission on form itself instead of calling handle method on button
+
+```typescript
+<form onSubmit={handleSubmit}>
+  <label>Name</label>
+  <input
+    name="firstName"
+    type="text"
+    value={firstName}
+    onChange={(e) => setFirstName(e.target.value)}
+  />
+
+  <input
+    name="lastName"
+    type="text"
+    value={lastName}
+    onChange={(e) => setLastName(e.target.value)}
+  />
+
+  <button type="submit">Submit</button>
+</form>
+```
+
+This is equivalent to the above method but only difference is that we are calling handleSubmit method on onSubmit attribute on form instead of calling it to onClick attribute on the button.
