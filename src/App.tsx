@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.scss";
-import UseMemoHook from "./examples/UseMemoHook";
-import UseReducerHook from "./examples/UseReducerHook";
+import { FunctionComponent } from "./examples/FunctionComponent";
 
 function App() {
   // let name = "Abhishek";
@@ -22,7 +21,8 @@ function App() {
        <ClassComponent propsIn="Class component"/>
       <FunctionComponent propsIn="Function component" /> */}
       {/* <UseMemoHook /> */}
-      <UseReducerHook />
+      {/* <UseReducerHook /> */}
+      <FunctionComponent propsIn="Function component" />
     </div>
   );
 }

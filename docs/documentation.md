@@ -774,3 +774,51 @@ const UseReducerHook = () => {
 
 export default UseReducerHook;
 ```
+
+## React Form
+
+React forms are same as HTML forms. It allows users to interact with web application/page.
+
+Now let's add a form in function component
+
+```typescript
+<form>
+  <label>Name</label>
+  <input
+    name="firstName"
+    type="text"
+    value={firstName}
+    onChange={(e) => setFirstName(e.target.value)}
+  />
+
+  <input
+    name="lastName"
+    type="text"
+    value={lastName}
+    onChange={(e) => setLastName(e.target.value)}
+  />
+
+  <button onClick={(e) => handleSubmit(e)}>Submit</button>
+</form>
+```
+
+Since we are storing data in state, let's define state -
+
+```typescript
+const [firstName, setFirstName] = useState("Abhishek");
+const [lastName, setLastName] = useState("Raj");
+```
+
+We also need a function to handle the form after submit -
+
+```typescript
+const handleSubmit = (e: any) => {
+  e.preventDefault();
+  console.log({ firstName, lastName });
+};
+```
+
+- In HTML form data is handled by DOM but in React it's handled by component
+- Since data is handled by component, we store the form data in state of component
+- We control the input change through onChange attribute
+- We have written `e.preventDefault();` in handleSubmit method to prevent application to refresh.
