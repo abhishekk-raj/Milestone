@@ -1,28 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import "./App.scss";
-import { FunctionComponent } from "./examples/FunctionComponent";
+import InputField from "./components/InputField";
+import TodoList from "./components/TodoList";
 
 function App() {
-  // let name = "Abhishek";
+  const [todo, setTodo] = useState("");
+  const [todoList, setTodoList] = useState<string[]>([
+    "abhishek",
+    "abhinav",
+    "ruplai",
+  ]);
 
-  useEffect(() => {
-    // Make some change on component render
-  }, []);
+  const handleInputForm = (e: React.FormEvent) => {
+    e.preventDefault();
 
-  // const changeName = () => {
-  //   name = "Sohan";
-  //   console.log(name);
-  // };
+    if (todo) {
+      setTodoList([...todoList, todo]);
+      setTodo("");
+    }
+  };
 
   return (
     <div className="App">
-      {/*<p>{name}</p>
-      <button onClick={changeName}>Change Name</button>
-       <ClassComponent propsIn="Class component"/>
-      <FunctionComponent propsIn="Function component" /> */}
-      {/* <UseMemoHook /> */}
-      {/* <UseReducerHook /> */}
-      <FunctionComponent propsIn="Function component" />
+      <InputField
+        todo={todo}
+        setTodo={setTodo}
+        handleInputForm={handleInputForm}
+      />
+      <TodoList todoList={todoList} />
     </div>
   );
 }
