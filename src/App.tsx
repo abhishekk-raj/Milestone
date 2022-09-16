@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.scss";
+import styles from "./App.module.scss";
 import InputField from "./components/InputField";
 import TodoList from "./components/TodoList";
 
@@ -21,7 +21,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`${styles.App} ${styles.TextGrey}`}>
       <InputField
         todo={todo}
         setTodo={setTodo}

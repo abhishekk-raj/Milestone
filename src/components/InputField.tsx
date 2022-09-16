@@ -7,6 +7,10 @@ const InputField: React.FC<IInputField> = ({
   handleInputForm,
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const styles = {
+    padding: "0.5rem",
+    margin: "0.5rem",
+  };
 
   return (
     <div>
@@ -17,6 +21,7 @@ const InputField: React.FC<IInputField> = ({
         }}
       >
         <input
+          style={styles}
           ref={inputRef}
           type="input"
           value={todo}
