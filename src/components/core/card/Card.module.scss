@@ -1,8 +1,7 @@
 @import "../../../styles/variables.scss";
 
 .Card {
-  background-color: white;
-  border: 1px solid #ccc;
+  border: 1px solid $ms-border-color;
   margin: $ms-margin;
   padding: $ms-padding;
   border-radius: $ms-border-radius;
@@ -12,10 +11,14 @@
 .CardHeader {
   font-size: 1rem;
   font-weight: bold;
+  border-bottom: 1px solid $ms-border-color;
+  padding-bottom: $ms-padding;
 }
 
 .CardBody {
   display: flex;
+  padding-top: $ms-padding;
+  padding-bottom: $ms-padding;
 }
 
 .CardBody > * {
@@ -25,7 +28,7 @@
 
 .CardFooter {
   hr {
-    background-color: #ccc;
+    background-color: $ms-border-color;
     border-color: transparent;
     border-width: 0.1px;
   }

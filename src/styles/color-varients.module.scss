@@ -1,0 +1,13 @@
+@import "./variables.scss";
+
+:export {
+  msColorPrimary: $ms-color-blue-700;
+  msColoreScondary: $ms-color-grey-700;
+  msColorSuccess: $ms-color-green-800;
+  msColorDanger: $ms-color-red-700;
+  msColorWarning: $ms-color-yellow-700;
+  msColorInfo: $ms-color-light-blue-800;
+  msColorLight: $ms-color-grey-50;
+  msColorDark: $ms-color-black;
+  msColorWhite: $ms-color-white;
+}

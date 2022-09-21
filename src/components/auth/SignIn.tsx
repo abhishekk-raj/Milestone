@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Card, CardBody, CardFooter, CardHeader } from "../core/card/Card";
+import { Varients } from "../core/enums/varients";
+import styles from "./Auth.module.scss";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -9,8 +11,8 @@ const SignIn = () => {
   };
 
   return (
-    <div>
-      <Card>
+    <div className={styles.Auth}>
+      <Card varient={Varients.Light}>
         <CardHeader>SignIn</CardHeader>
         <CardBody>
           <form>
@@ -19,6 +21,7 @@ const SignIn = () => {
 
             <label>Password</label>
             <input name="lastName" type="text" />
+
             <button onClick={onSignInButtonClick}>SignIn</button>
             <Link to="/sign-up">Don't have account? SignUp</Link>
           </form>

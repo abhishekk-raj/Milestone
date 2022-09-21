@@ -1,4 +1,90 @@
 $ms-border-radius: 0.5rem;
-$ms-margin: 0.5rem;
-$ms-padding: 0.5rem;
+$ms-margin: 1rem;
+$ms-padding: 1rem;
 $ms-border-width: 1px;
+
+/* Colors */
+
+$ms-color-black: #1a1a1a;
+$ms-color-white: #ffffff;
+
+$ms-color-blue-25: #cce4ff;
+$ms-color-blue-50: #e6f1ff;
+$ms-color-blue-100: #b3d6ff;
+$ms-color-blue-200: #99c9ff;
+$ms-color-blue-300: #80bbff;
+$ms-color-blue-400: #66adff;
+$ms-color-blue-500: #4da0ff;
+$ms-color-blue-600: #3392ff;
+$ms-color-blue-700: #1a85ff;
+$ms-color-blue-800: #0178ff;
+$ms-color-blue-900: #006be6;
+
+$ms-color-light-blue-50: #e7fafe;
+$ms-color-light-blue-100: #cff5fc;
+$ms-color-light-blue-200: #b6f0fb;
+$ms-color-light-blue-300: #9eebfa;
+$ms-color-light-blue-400: #86e5f9;
+$ms-color-light-blue-500: #6ee0f7;
+$ms-color-light-blue-600: #55dbf6;
+$ms-color-light-blue-700: #3dd6f5;
+$ms-color-light-blue-800: #25d1f4;
+$ms-color-light-blue-900: #0dcaf0;
+
+$ms-color-red-50: #fee7e6;
+$ms-color-red-100: #fececd;
+$ms-color-red-200: #fdb6b4;
+$ms-color-red-300: #fc9d9c;
+$ms-color-red-400: #fc8583;
+$ms-color-red-500: #fb6c6a;
+$ms-color-red-600: #fb5451;
+$ms-color-red-700: #fa3b38;
+$ms-color-red-800: #fa2e2c;
+$ms-color-red-900: #f9231f;
+
+$ms-color-green-25: #e8fdf3;
+$ms-color-green-50: #d0fbe6;
+$ms-color-green-100: #b9f8da;
+$ms-color-green-200: #a2f6cd;
+$ms-color-green-300: #8af4c1;
+$ms-color-green-400: #73f2b5;
+$ms-color-green-500: #5cf0a8;
+$ms-color-green-600: #2deb8f;
+$ms-color-green-700: #14d276;
+$ms-color-green-800: #11bb69;
+$ms-color-green-900: #0fa35c;
+
+$ms-color-yellow-25: #fff8e6;
+$ms-color-yellow-50: #fff1cc;
+$ms-color-yellow-100: #ffebb3;
+$ms-color-yellow-200: #ffe499;
+$ms-color-yellow-300: #ffdd80;
+$ms-color-yellow-400: #ffd666;
+$ms-color-yellow-500: #ffcf4d;
+$ms-color-yellow-600: #ffc933;
+$ms-color-yellow-700: #ffc21a;
+$ms-color-yellow-800: #ffbb00;
+$ms-color-yellow-900: #e6a800;
+
+$ms-color-grey-25: #f2f2f2;
+$ms-color-grey-50: #e6e6e6;
+$ms-color-grey-100: #d9d9d9;
+$ms-color-grey-200: #cccccc;
+$ms-color-grey-300: #bfbfbf;
+$ms-color-grey-400: #b3b3b3;
+$ms-color-grey-500: #999999;
+$ms-color-grey-600: #808080;
+$ms-color-grey-700: #666666;
+$ms-color-grey-800: #4d4d4d;
+$ms-color-grey-900: #333333;
+
+$ms-color-primary: $ms-color-blue-700;
+$ms-color-secondary: $ms-color-grey-700;
+$ms-color-success: $ms-color-green-800;
+$ms-color-danger: $ms-color-red-700;
+$ms-color-warning: $ms-color-yellow-700;
+$ms-color-info: $ms-color-light-blue-800;
+$ms-color-light: $ms-color-grey-25;
+$ms-color-dark: $ms-color-black;
+
+$ms-border-color: $ms-color-grey-100;
