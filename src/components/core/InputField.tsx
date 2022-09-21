@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { IInputField } from "../models/input-field.props";
+import { IInputField } from "../../models/input-field.props";
 
 const InputField: React.FC<IInputField> = ({
   todo,

@@ -1,5 +1,5 @@
 import React from "react";
-import { ITodoListItemProps } from "../models/todo-list-item.props";
+import { ITodoListItemProps } from "../../models/todo-list-item.props";
 
 const TodoGridItem: React.FC<ITodoListItemProps> = ({ name }) => {
   return (

@@ -1,5 +1,5 @@
 import React, { CSSProperties, useState } from "react";
-import { ITodoListProps } from "../models/todo-list.props";
+import { ITodoListProps } from "../../models/todo-list.props";
 import TodoGridItem from "./TodoGridItem";
 import TodoListItem from "./TodoListItem";
 

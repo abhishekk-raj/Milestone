@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import InputField from "./InputField";
+import InputField from "../core/InputField";
 import TodoList from "./TodoList";
 
-import styles from ".././App.module.scss";
+import styles from "./Todo.module.scss";
 
 const Todo = () => {
   const [todo, setTodo] = useState("");
@@ -22,7 +22,7 @@ const Todo = () => {
   };
 
   return (
-    <div className={`${styles.App} ${styles.TextGrey}`}>
+    <div className={`${styles.TextGrey}`}>
       <InputField
         todo={todo}
         setTodo={setTodo}
