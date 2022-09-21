@@ -1,0 +1,32 @@
+@import "../../../styles/variables.scss";
+
+.Card {
+  background-color: white;
+  border: 1px solid #ccc;
+  margin: $ms-margin;
+  padding: $ms-padding;
+  border-radius: $ms-border-radius;
+  width: fit-content;
+}
+
+.CardHeader {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.CardBody {
+  display: flex;
+}
+
+.CardBody > * {
+  display: flex;
+  flex-direction: column;
+}
+
+.CardFooter {
+  hr {
+    background-color: #ccc;
+    border-color: transparent;
+    border-width: 0.1px;
+  }
+}
