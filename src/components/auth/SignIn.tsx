@@ -1,6 +1,13 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Card, CardBody, CardFooter, CardHeader } from "../core/card/Card";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  CardSubtitle,
+  CardTitle,
+} from "../core/card/Card";
 import { Varients } from "../core/enums/varients";
 import styles from "./Auth.module.scss";
 
@@ -12,8 +19,11 @@ const SignIn = () => {
 
   return (
     <div className={styles.Auth}>
-      <Card varient={Varients.Light}>
-        <CardHeader>SignIn</CardHeader>
+      <Card varient={Varients.Success}>
+        <CardHeader>
+          <CardTitle>SignIn</CardTitle>
+          <CardSubtitle>SignIn to continue</CardSubtitle>
+        </CardHeader>
         <CardBody>
           <form>
             <label>Username</label>

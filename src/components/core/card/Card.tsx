@@ -28,6 +28,14 @@ const CardBody = (props: any) => {
   return <div className={styles.CardBody}>{props.children}</div>;
 };
 
+const CardTitle = (props: any) => {
+  return <h1 className={styles.CardTitle}>{props.children}</h1>;
+};
+
+const CardSubtitle = (props: any) => {
+  return <p className={styles.CardSubtitle}>{props.children}</p>;
+};
+
 const CardFooter = (props: any) => {
   return (
     <div className={styles.CardFooter}>
@@ -37,4 +45,4 @@ const CardFooter = (props: any) => {
   );
 };
 
-export { Card, CardHeader, CardBody, CardFooter };
+export { Card, CardHeader, CardBody, CardTitle, CardSubtitle, CardFooter };
