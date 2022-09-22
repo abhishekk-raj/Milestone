@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { Varients } from "../enums/varients";
+import { Variants } from "../../enums/variants";
 
 export interface ICardProps {
-  varient: Varients;
+  varient: Variants;
   children: ReactNode;
 }

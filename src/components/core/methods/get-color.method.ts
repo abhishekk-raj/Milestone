@@ -1,30 +1,30 @@
-import { Varients } from "../enums/varients";
+import { Variants } from "../enums/variants";
 import colorVarients from "../../../styles/color-varients.module.scss";
 
-export const getColor = (varient: Varients) => {
+export const getColor = (varient: Variants) => {
   switch (varient) {
-    case Varients.Primary:
+    case Variants.Primary:
       return colorVarients.msColorPrimary;
 
-    case Varients.Secondary:
+    case Variants.Secondary:
       return colorVarients.msColoreScondary;
 
-    case Varients.Success:
+    case Variants.Success:
       return colorVarients.msColorSuccess;
 
-    case Varients.Danger:
+    case Variants.Danger:
       return colorVarients.msColorDanger;
 
-    case Varients.Warning:
+    case Variants.Warning:
       return colorVarients.msColorWarning;
 
-    case Varients.Info:
+    case Variants.Info:
       return colorVarients.msColorInfo;
 
-    case Varients.Light:
+    case Variants.Light:
       return colorVarients.msColorLight;
 
-    case Varients.Dark:
+    case Variants.Dark:
       return colorVarients.msColorDark;
 
     default:

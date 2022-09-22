@@ -1,17 +1,17 @@
 import React from "react";
-import { Varients } from "../enums/varients";
-import { getColor } from "../methods/get-color.method";
+import { Variants } from "../../enums/variants";
+import { getColor } from "../../methods/get-color.method";
 import styles from "./Card.module.scss";
-import colorVarients from "../../../styles/color-varients.module.scss";
+import colorVariants from "../../../../styles/color-varients.module.scss";
 import { ICardProps } from "./Card.props";
 
 const Card = (props: ICardProps) => {
   const style = {
     backgroundColor: getColor(props.varient),
     color:
-      props.varient === Varients.Light
-        ? colorVarients.msColorDark
-        : colorVarients.msColorWhite,
+      props.varient === Variants.Light
+        ? colorVariants.msColorDark
+        : colorVariants.msColorWhite,
   };
   return (
     <div style={style} className={styles.Card}>

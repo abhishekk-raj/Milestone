@@ -1,4 +1,4 @@
-export enum Varients {
+export enum Variants {
   Primary = "primary",
   Secondary = "secondary",
   Success = "success",

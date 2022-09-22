@@ -7,8 +7,8 @@ import {
   CardHeader,
   CardSubtitle,
   CardTitle,
-} from "../core/card/Card";
-import { Varients } from "../core/enums/varients";
+} from "../core/components/card/Card";
+import { Variants } from "../core/enums/variants";
 import styles from "./Auth.module.scss";
 
 const SignIn = () => {
@@ -19,7 +19,7 @@ const SignIn = () => {
 
   return (
     <div className={styles.Auth}>
-      <Card varient={Varients.Success}>
+      <Card varient={Variants.Success}>
         <CardHeader>
           <CardTitle>SignIn</CardTitle>
           <CardSubtitle>SignIn to continue</CardSubtitle>
