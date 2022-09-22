@@ -1,3 +1,14 @@
-.Input {
+@import "../../../../styles/variables.scss";
 
+.Input {
+  padding: $ms-padding-small;
+  margin-top: $ms-margin-small;
+  margin-bottom: $ms-margin-small;
+  border-radius: $ms-border-radius;
+  border: 1px solid $ms-border-color;
+  outline: none;
+}
+
+.Label {
+    font-size: 0.9rem;
 }

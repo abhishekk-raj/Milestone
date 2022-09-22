@@ -54,14 +54,14 @@ export const FunctionComponent: React.FC<IProps> = ({ propsIn }) => {
 
       {/* <form>
         <label>Name</label>
-        <input
+        <form
           name="firstName"
           type="text"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
 
-        <input
+        <form
           name="lastName"
           type="text"
           value={lastName}
@@ -75,14 +75,14 @@ export const FunctionComponent: React.FC<IProps> = ({ propsIn }) => {
 
       {/* <form onSubmit={handleSubmit}>
         <label>Name</label>
-        <input
+        <form
           name="firstName"
           type="text"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
 
-        <input
+        <form
           name="lastName"
           type="text"
           value={lastName}

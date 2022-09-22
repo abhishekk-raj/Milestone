@@ -8,6 +8,7 @@ import {
   CardSubtitle,
   CardTitle,
 } from "../core/components/card/Card";
+import { Input, Label } from "../core/components/form/Input";
 import { Variants } from "../core/enums/variants";
 import styles from "./Auth.module.scss";
 
@@ -15,6 +16,10 @@ const SignIn = () => {
   const navigate = useNavigate();
   const onSignInButtonClick = () => {
     navigate("/todo");
+  };
+
+  const onInputChange = (e: any) => {
+    console.log(e);
   };
 
   return (
@@ -26,11 +31,21 @@ const SignIn = () => {
         </CardHeader>
         <CardBody>
           <form>
-            <label>Username</label>
-            <input name="firstName" type="text" />
+            <Label>Username</Label>
+            <Input
+              type="text"
+              name="firstName"
+              placeholder="Username"
+              onChange={onInputChange}
+            />
 
-            <label>Password</label>
-            <input name="lastName" type="text" />
+            <Label>Password</Label>
+            <Input
+              type="date"
+              name="password"
+              placeholder="Password"
+              onChange={onInputChange}
+            />
 
             <button onClick={onSignInButtonClick}>SignIn</button>
             <Link to="/sign-up">Don't have account? SignUp</Link>
